@@ -1,4 +1,4 @@
-package listeners;
+package com.alexisam.chatapp.controller;
 
 import com.alexisam.chatapp.model.ChatMessage;
 import org.slf4j.Logger;
@@ -41,6 +41,7 @@ public class WebSocketListeners {
 
             messagingTemplate.convertAndSend("/topic/public", chatMessage);
         } // Aqui se coge el nombre del usuario que se desconecta y se envia a todos los usuarios que estan conectados
-          // el nombre del usuario que se desconecta y el mensaje desconectado.
+        // el nombre del usuario que se desconecta y el mensaje desconectado.
     }
 }
+
