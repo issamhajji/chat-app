@@ -33,10 +33,10 @@ function connect(event) {
 
 
 function onConnected() {
-    // Subscribe to the Public Topic
+   // Creo  que esta linea de codigo es para poder susbcribir nuevos usuaios al chat
     stompClient.subscribe('/topic/public', onMessageReceived);
 
-    // Tell your username to the server
+    // Indicamos nuestro nombre de usuario al servidor
     stompClient.send("/app/chat.addUser",
         {},
         JSON.stringify({sender: username, type: 'JOIN'})
@@ -47,7 +47,7 @@ function onConnected() {
 
 
 function onError(error) {
-    connectingElement.textContent = 'Could not connect to WebSocket server. Please refresh this page to try again!';
+    connectingElement.textContent = 'Error al sincronizar con el chat vuelvo a intentarlo!';
     connectingElement.style.color = 'red';
 }
 
